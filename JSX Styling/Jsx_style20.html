@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    </head>
+    <body>
+        <div id="d"></div>
+        <script type="text/babel">
+            var students = [
+        {
+          firstname:"Praveen",
+          lastname:"Gubbala",
+          age:40,
+          gender:"male"
+        },
+        {
+          firstname:"Smrithi",
+          lastname:"mandana",
+          age:25,
+          gender:'female'
+        },
+        {
+          firstname:"mithali",
+          lastname:"raj",
+          age:39,
+          gender:'female'
+        },
+        {
+          firstname:"Rohit",
+          lastname:"Sharma",
+          age:35,
+          gender:'male'
+        },
+        {
+          firstname:"Sachin",
+          lastname:"Tendulkar",
+          age:50,
+          gender:'male'
+        },
+    ]
+        
+    var s = <table style={{border:'2px solid'}}>
+        {
+            students.map((a)=>{
+                return (
+                    <tr style={a.gender==='male'?{backgroundColor:"blue"}:{backgroundColor:"pink"}}>
+                        <td>{a.firstname}</td>
+                        <td>{a.lastname}</td>
+                        <td>{a.age}</td>
+                        <td>{a.gender}</td>
+                    </tr>
+               )
+            })
+       
+        }
+        </table>
+        ReactDOM.render(s,document.getElementById("d"))
+
+        </script>
+    </body>
+</html>
